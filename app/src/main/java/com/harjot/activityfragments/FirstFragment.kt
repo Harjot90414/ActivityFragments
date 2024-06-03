@@ -82,8 +82,8 @@ class FirstFragment : Fragment(), ActivityInterface {
 
     override fun colorChange(color: Int) {
         when(color){
-       1->binding?.rlRelative1?.setBackgroundColor(ContextCompat.getColor(fragmentActivity, R.color.red))
-       2->binding?.rlRelative1?.setBackgroundColor(ContextCompat.getColor(fragmentActivity, R.color.green))
+            1->binding?.rlRelative1?.setBackgroundColor(ContextCompat.getColor(fragmentActivity, R.color.red))
+            2->binding?.rlRelative1?.setBackgroundColor(ContextCompat.getColor(fragmentActivity, R.color.green))
             3->binding?.rlRelative1?.setBackgroundColor(ContextCompat.getColor(fragmentActivity, R.color.yellow))
         }
     }

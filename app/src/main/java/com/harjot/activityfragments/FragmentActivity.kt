@@ -14,13 +14,29 @@ class FragmentActivity : AppCompatActivity() {
     lateinit var activityInterface1: ActivityInterface1
     lateinit var activityInterface2: ActivityInterface2
     lateinit var binding: ActivityFragmentBinding
-    private  val TAG = "FragmentActivity"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFragmentBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+        binding?.cb1stFragment?.setOnClickListener {
+            if (binding?.rbRed?.isSelected == true && binding?.cb1stFragment?.isEnabled == true) {
+                activityInterface.colorChange(1)
+            }
+        }
+
+        binding?.cb2ndFragment?.setOnClickListener{
+            if(binding?.rbRed?.isEnabled==true && binding?.cb2ndFragment?.isEnabled==true){
+                activityInterface1.colorChange(1)
+            }
+        }
+        binding?.cb3rdFragment?.setOnClickListener{
+            if(binding?.rbRed?.isEnabled==true && binding?.cb3rdFragment?.isEnabled==true){
+                activityInterface2.colorChange(1)
+            }
+        }
 
     }
 
@@ -36,23 +52,6 @@ class FragmentActivity : AppCompatActivity() {
 
 
     fun Red(view: View) {
-        binding?.cb1stFragment?.setOnClickListener {
-            if (binding?.rbRed?.isEnabled == true && binding?.cb1stFragment?.isEnabled == true) {
-                activityInterface.colorChange(1)
-            }
-        }
-
-            binding?.cb2ndFragment?.setOnClickListener{
-                if(binding?.rbRed?.isEnabled==true && binding?.cb2ndFragment?.isEnabled==true){
-                    activityInterface1.colorChange(1)
-                }
-            }
-            binding?.cb3rdFragment?.setOnClickListener{
-                if(binding?.rbRed?.isEnabled==true && binding?.cb3rdFragment?.isEnabled==true){
-                    activityInterface2.colorChange(1)
-                }
-            }
-
 
     }
 
@@ -75,9 +74,6 @@ class FragmentActivity : AppCompatActivity() {
                     activityInterface2.colorChange(2)
                 }
             }
-
-
-
     }
 
     fun Yellow(view: View) {
@@ -97,9 +93,6 @@ class FragmentActivity : AppCompatActivity() {
                     activityInterface2.colorChange(3)
                 }
             }
-
-
-
     }
 
 }
